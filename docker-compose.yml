@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  rust-env:
+    build:
+      context: '.'
+      dockerfile: ./docker/rust/Dockerfile
+    tty: true
+    volumes:
+      - ./docker/rust/home/user:/home/user
+    ports:
+      - 8080:8080
+    restart: always
